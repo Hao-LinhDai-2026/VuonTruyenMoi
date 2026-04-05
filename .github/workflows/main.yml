@@ -1,0 +1,25 @@
+name: Duc APK Hon Truyen
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lay ma nguon
+        uses: actions/checkout@v3
+
+      - name: Khoi dong Lo Duc Buildozer
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer
+        with:
+          command: buildozer android debug
+          buildozer_version: master
+
+      - name: Giao hang APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: AppTruyenS24
+          path: ${{ steps.buildozer.outputs.filename }}
