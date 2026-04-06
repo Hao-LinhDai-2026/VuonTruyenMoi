@@ -1,4 +1,4 @@
-name: Duc APK Hon Truyen
+ }name: Duc APK Hon Truyen
 on:
   push:
     branches: [ main ]
