@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Lay ma nguon
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Khoi dong Lo Duc Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
@@ -19,8 +19,7 @@ jobs:
           buildozer_version: master
 
       - name: Giao hang APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: AppTruyenS24
           path: ${{ steps.buildozer.outputs.filename }}
-
